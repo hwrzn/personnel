@@ -87,4 +87,34 @@ public class JDBC implements Passerelle
 			throw new SauvegardeImpossible(exception);
 		}		
 	}
+
+	@Override
+	public int insert(Employe employe) throws SauvegardeImpossible {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void delete(Employe employe) throws SauvegardeImpossible {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Ligue ligue) throws SauvegardeImpossible {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Ligue ligue) throws SauvegardeImpossible {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Employe employe, String string) throws SauvegardeImpossible {
+		// TODO Auto-generated method stub
+		
+	}
 }
