@@ -1,0 +1,28 @@
+DROP DATABASE IF EXISTS Personnel; 
+CREATE DATABASE Personnel ;
+USE Personnel;
+
+
+CREATE TABLE EMPLOYE (
+  idEmploye INT NOT NULL AUTO_INCREMENT,
+  nom VARCHAR(50),
+  prenom VARCHAR(50),
+  password VARCHAR(30),
+  mail VARCHAR(50),
+  dateArrivee DATE,
+  dateDepart DATE,
+  estAdmin BOOLEAN,
+  idLigue INT,
+  CONSTRAINT pk_employe PRIMARY KEY (idEmploye)
+) ENGINE=INNODB;
+
+CREATE TABLE LIGUE (
+  idligue INT NOT NULL AUTO_INCREMENT,
+  nom VARCHAR(100),
+  idEmploye INT,
+  CONSTRAINT pk_ligue PRIMARY KEY (idLigue)
+) ENGINE=INNODB;
+
+
+ALTER TABLE EMPLOYE ADD CONSTRAINT fk_employe FOREIGN KEY (idLigue) REFERENCES LIGUE(idLigue);
+ALTER TABLE LIGUE ADD CONSTRAINT fk_ligue FOREIGN KEY (idEmploye) REFERENCES EMPLOYE(idEmploye);
